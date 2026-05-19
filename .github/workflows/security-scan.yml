@@ -19,9 +19,8 @@ jobs:
       semgrep-config: p/python
       enable-flask-rules: true
       enable-dast: true
-      app-start-command: sudo python app/app.py
-      app-port: '80'
+      app-start-command: 'FLASK_APP=app/app.py flask run --host=0.0.0.0 --port=5000'
+      app-port: '5000'
       trivy-severity: HIGH,CRITICAL
       fail-on-findings: false
     secrets: inherit
-    #fcv
